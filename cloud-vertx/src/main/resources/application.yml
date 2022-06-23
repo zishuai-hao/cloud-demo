@@ -1,0 +1,9 @@
+vertx:
+  max-event-loop-execute-time-unit: seconds
+  max-event-loop-execute-time: 30
+  max-worker-execute-time-unit: seconds
+  max-worker-execute-time: 30
+  prefer-native-transport: true
+
+server:
+  port: 10010

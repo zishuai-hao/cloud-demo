@@ -1,0 +1,30 @@
+server:
+  port: 8828
+
+seata:
+  tx-service-group: shop-public
+  service:
+    vgroup-mapping:
+      shop-public: default
+  config:
+    nacos:
+      server-addr: 127.0.0.1:8868
+  registry:
+    nacos:
+      server-addr: 127.0.0.1:8868
+      cluster: default
+
+spring:
+  application:
+    name: service-repo
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8868
+      config:
+        shared-configs: application.yml
+  config:
+    import: nacos:${spring.application.name}.yml
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud-repo?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: a.o7a@xa
